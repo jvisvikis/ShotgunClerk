@@ -24,16 +24,17 @@ public class CustomerBehaviour : MonoBehaviour
         switch(state)
         {
             case CustomerState.EnterStore:
+                if(transform.position.x == counterLine.position.x && transform.position.z == counterLine.position.z)
+                {
+                    state = CustomerState.AskedForItem;
+                    Debug.Log("Reached counter");
+                }
+                break;
+            case CustomerState.AskedForItem:
                 if(served)
                 {
                     agent.SetDestination(storeEntrance.position);
                     state = CustomerState.ExitStore;
-                }
-                break;
-            case CustomerState.ExitStore:
-                if(robbing)
-                {
-                    //rob store
                 }
 
                 break;
@@ -42,6 +43,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     enum CustomerState{
         EnterStore,
+        AskedForItem,
         ExitStore,
         Dead
     }
