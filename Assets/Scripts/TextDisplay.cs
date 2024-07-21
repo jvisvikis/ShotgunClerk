@@ -6,21 +6,26 @@ using TMPro;
 
 public class TextDisplay : MonoBehaviour
 {
-    [SerializeField] private string text;
+    [SerializeField] private string [] speechTotext;
     [SerializeField] private float charactersPerSecond = 90;
+    [SerializeField] private float textInterval;
     [SerializeField] private TextMeshProUGUI dialogueText;
+
+    private AudioManager audioManager;
+    private int idx;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(TypeTextUncapped(text));
-    }
-
-    
+        audioManager = AudioManager.instance;
+        audioManager.PlayVoiceLine(idx);
+        StartCoroutine(TypeTextUncapped(speechTotext[0]));
+    }    
 
     IEnumerator TypeTextUncapped(string line)
     {
         float timer = 0;
-        float interval = 1 / charactersPerSecond;
+        float lineLength = audioManager.GetCurrentLineLength();
+        float interval = lineLength/(speechTotext[idx].Length * 1.5f);
         string textBuffer = null;
         char[] chars = line.ToCharArray();
         int i = 0;
@@ -39,6 +44,13 @@ public class TextDisplay : MonoBehaviour
                 timer -= Time.deltaTime;
                 yield return null;
             }
+        }
+        yield return new WaitForSeconds(textInterval);
+        idx++;
+        if(idx < speechTotext.Length)
+        {
+            audioManager.PlayVoiceLine(idx);
+            StartCoroutine(TypeTextUncapped(speechTotext[idx]));
         }
     }
 }

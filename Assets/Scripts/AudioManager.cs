@@ -6,12 +6,15 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance {get;private set;}
     [SerializeField] private AudioClip [] deathLines = new AudioClip[8];
+    [SerializeField] private AudioClip [] voiceLines;
     [SerializeField] private AudioClip gunShotSfx;
     [SerializeField] private AudioClip backgroundMusic;
     [SerializeField] private AudioSource audioPrefab;
     [SerializeField] private AudioSource audioBackgroundPrefab;
     [SerializeField] [Range(0,1)] private float volume;
     [SerializeField] [Range(0,1)] private float backgroundVolume;
+
+    private int voiceIdx;
 
     void Awake()
     {
@@ -63,5 +66,15 @@ public class AudioManager : MonoBehaviour
             audio.volume = backgroundVolume * (timer/duration);
             yield return null;
         }
+    }
+
+    public void PlayVoiceLine(int idx)
+    {
+        PlayAudio(voiceLines[idx], transform);
+    }
+
+    public float GetCurrentLineLength()
+    {
+        return voiceLines[voiceIdx].length;
     }
 }
