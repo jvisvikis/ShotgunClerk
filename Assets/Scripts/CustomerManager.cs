@@ -35,6 +35,11 @@ public class CustomerManager : MonoBehaviour
         customersDead = new List<CustomerBehaviour>();
     }
 
+    public void AddDeadCustomers(CustomerBehaviour customer)
+    {
+        customersDead.Add(customer);
+    }
+
     public void GiveCustomerItem(string itemName)
     {
         currentCustomer.TakeItem(itemName);

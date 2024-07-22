@@ -5,9 +5,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField] private GameObject Father;
 
     public int day {get;set;}
     public float money {get; set;}
+
+    private CustomerManager customerManager;
 
     void Awake()
     {
@@ -20,6 +23,17 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+    }
+
+    void Start()
+    {
+        customerManager = CustomerManager.instance;
+        DayStart();
+    }
+
+    public void DayStart()
+    {
+        
     }
 
     public void DayEnd()
