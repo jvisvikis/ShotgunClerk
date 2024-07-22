@@ -27,17 +27,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        day = 1;
         customerManager = CustomerManager.instance;
         DayStart();
     }
 
     public void DayStart()
     {
-        
+        string dayToLoad = $"Day{day}";
+        customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
+        customerManager.NextCustomer();
     }
 
     public void DayEnd()
     {
         day++;
+        //Show list of dead customers
     }
 }

@@ -7,11 +7,12 @@ public class CustomerManager : MonoBehaviour
 {
     public static CustomerManager instance {get; private set;}
 
-    [SerializeField] private List<CustomerBehaviour> customerPrefabs;
+    
     [SerializeField] private Transform customerSpawn;
     [SerializeField] private Transform counterPlacement;
 
     public CustomerBehaviour currentCustomer {get;set;}
+    public CustomerBehaviour [] customerPrefabs {get; set;}
     public float thankTime;
 
     private List<CustomerBehaviour> customersDead;
@@ -30,8 +31,7 @@ public class CustomerManager : MonoBehaviour
     }
 
     void Start()
-    {
-        NextCustomer(); 
+    { 
         customersDead = new List<CustomerBehaviour>();
     }
 
@@ -53,7 +53,7 @@ public class CustomerManager : MonoBehaviour
     public IEnumerator NextCustomer(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if(idx < customerPrefabs.Count)
+        if(idx < customerPrefabs.Length)
         {
             currentCustomer = Instantiate(customerPrefabs[idx++], customerSpawn.position, Quaternion.identity);
             currentCustomer.storeEntrance = customerSpawn;
