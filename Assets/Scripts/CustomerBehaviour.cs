@@ -7,6 +7,7 @@ using TMPro;
 public class CustomerBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject speechBubble;
+    [SerializeField] private TextDisplay textDisplay;
     [SerializeField] private TextMeshProUGUI speech;
     [SerializeField] private NavMeshAgent agent;    
     [SerializeField] private bool robbing;
@@ -23,6 +24,7 @@ public class CustomerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        textDisplay = GetComponent<TextDisplay>();
         speechBubble.SetActive(false);
         speech.text = entranceSpeech;
         player = FindObjectOfType<PlayerController>();
@@ -40,9 +42,9 @@ public class CustomerBehaviour : MonoBehaviour
                 FacePlayer();
                 if(transform.position.x == counterLine.position.x && transform.position.z == counterLine.position.z)
                 {
+                    textDisplay.TypeLine(entranceSpeech);
                     speechBubble.SetActive(true);
                     state = CustomerState.AskedForItem;
-                    Debug.Log("Reached counter");
                 }
                 break;
             case CustomerState.AskedForItem:
@@ -88,7 +90,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     public IEnumerator SayThanks(float duration)
     {
-        speech.text = "Thank you!";
+        textDisplay.TypeLine("Thank you!");
         yield return new WaitForSeconds(duration);
         served = true;
         speechBubble.SetActive(false);
