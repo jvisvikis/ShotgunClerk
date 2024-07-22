@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4665111388898479151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367639112686506486}
+  - component: {fileID: 1394898933784774208}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367639112686506486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665111388898479151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 377.39307, y: 227.85297, z: -673.52124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1394898933784774208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4665111388898479151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0102cd8d634e41b41981b457b2463961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathLines:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  voiceLines:
+  - {fileID: 8300000, guid: dc10802f924df634ca7ad7bba364824b, type: 3}
+  - {fileID: 8300000, guid: 7461e9ce08b4db54ea7a628382a7b098, type: 3}
+  - {fileID: 8300000, guid: ec56a407e450d944d8a993959c7b3c6d, type: 3}
+  - {fileID: 8300000, guid: 856daaba1a58a274c918f92973845a61, type: 3}
+  - {fileID: 8300000, guid: 26d96cbcb4c302d4d8e5d7db3441d0a6, type: 3}
+  - {fileID: 8300000, guid: 03e28a6b5bdf10d4eb90078ef01c5686, type: 3}
+  - {fileID: 8300000, guid: fa1f5eb1d66b5c64b8f16da05d5fc373, type: 3}
+  - {fileID: 8300000, guid: abbbe4660e760414a970a7fa5f27420b, type: 3}
+  - {fileID: 8300000, guid: 87e33863275f0a440abc21eb8325cd9e, type: 3}
+  - {fileID: 8300000, guid: 14f2ca5c7885406428be3e421572b881, type: 3}
+  - {fileID: 8300000, guid: 03bc543b844643e4682fc1b0fda89c21, type: 3}
+  - {fileID: 8300000, guid: 8ed226937fa35874f9a1568413faef80, type: 3}
+  - {fileID: 8300000, guid: 5b818b0974ea8734cbeccd7da75f42af, type: 3}
+  - {fileID: 8300000, guid: 1d4bce1c58df6e244831aaa825c22a7e, type: 3}
+  - {fileID: 8300000, guid: 34ae89467b82f134e81059d506bd37a6, type: 3}
+  - {fileID: 8300000, guid: 0feae56330d2032449b7d1b39f1202c9, type: 3}
+  gunShotSfx: {fileID: 0}
+  backgroundMusic: {fileID: 0}
+  audioPrefab: {fileID: 2978317331239793455, guid: d3720822d5ceb9d41b5718ee4dbbfa6e,
+    type: 3}
+  audioBackgroundPrefab: {fileID: 0}
+  volume: 1
+  backgroundVolume: 0.503
