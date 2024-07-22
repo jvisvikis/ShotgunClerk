@@ -14,11 +14,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform itemSpawn;
     [SerializeField] private LayerMask itemLayer;
     [SerializeField] private LayerMask counterLayer;
+    [SerializeField] private Vector3 shotgunPosOffset;
 
     public GameObject itemEquipped {get;set;}
+    private ShotgunFire shotgun;
 
     private bool groundedPlayer;
     private bool hasItem;   
+    private bool shotgunEquipped;
     private Camera cam;
     private CharacterController controller;
     private CustomerManager customerManager;
@@ -49,9 +52,13 @@ public class PlayerController : MonoBehaviour
         {
             GrabItem();
         }
-        else if(inputManager.PlayerFired())
+        else if(inputManager.PlayerFired() && !shotgunEquipped)
         {
             PlaceItem();
+        }
+        else if(inputManager.PlayerFired())
+        {
+            shotgun.Shoot();
         }
         
         // if(itemEquipped != null)
@@ -68,7 +75,20 @@ public class PlayerController : MonoBehaviour
         // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, itemLayer))
         {
-            Debug.Log("Did Hit: " + hit.collider.gameObject.name);
+            if(hit.collider == null)
+            {
+                return;
+            }
+            if(hit.collider.gameObject.name.Contains("Shotgun"));
+            {
+                hasItem = true;
+                shotgunEquipped = true;
+                itemEquipped = hit.collider.gameObject;
+                itemEquipped.transform.parent = itemSpawn;
+                itemEquipped.transform.localPosition = shotgunPosOffset;
+                itemEquipped.transform.localRotation = Quaternion.Euler(0,-5,0);
+                shotgun = itemEquipped.GetComponent<ShotgunFire>();
+            }
             for(int i = 0; i<itemNames.Length; i++)
             {
                 if(itemNames[i].Equals(hit.collider.gameObject.name))
@@ -115,7 +135,7 @@ public class PlayerController : MonoBehaviour
         rb.isKinematic = false;
         rb.AddForce(itemEquipped.transform.forward * 100f);
         itemEquipped.transform.parent = null;
-        Destroy(itemEquipped, 3);
+        //Destroy(itemEquipped, 3);
         itemEquipped = null;
     }
 

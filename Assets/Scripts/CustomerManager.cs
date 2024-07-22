@@ -7,7 +7,7 @@ public class CustomerManager : MonoBehaviour
 {
     public static CustomerManager instance {get; private set;}
 
-    [SerializeField] private CustomerBehaviour [] customerPrefabs;
+    [SerializeField] private List<CustomerBehaviour> customerPrefabs;
     [SerializeField] private Transform customerSpawn;
     [SerializeField] private Transform counterPlacement;
 
@@ -26,7 +26,6 @@ public class CustomerManager : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(this);
         }
     }
 
@@ -43,7 +42,7 @@ public class CustomerManager : MonoBehaviour
 
     public void NextCustomer()
     {
-        if(idx < customerPrefabs.Length)
+        if(idx < customerPrefabs.Count)
         {
             currentCustomer = Instantiate(customerPrefabs[idx++], customerSpawn.position, Quaternion.identity);
             currentCustomer.storeEntrance = customerSpawn;
@@ -52,6 +51,7 @@ public class CustomerManager : MonoBehaviour
         else
         {
             //End Day
+            GameManager.instance.DayEnd();
         }
         
     }
