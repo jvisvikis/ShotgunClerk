@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         move = camTransform.forward * move.z + camTransform.right * move.x;
         move.y = 0;
         controller.Move(move * Time.deltaTime * playerSpeed);
-
         if(inputManager.PlayerFired() && !hasItem)
         {
             GrabItem();
@@ -59,6 +58,7 @@ public class PlayerController : MonoBehaviour
         else if(inputManager.PlayerFired())
         {
             shotgun.Shoot();
+            DropItem();
         }
         
         // if(itemEquipped != null)
@@ -79,25 +79,30 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-            if(hit.collider.gameObject.name.Contains("Shotgun"));
+            if(hit.collider.gameObject.name.Contains("Shotgun"))
             {
                 hasItem = true;
                 shotgunEquipped = true;
                 itemEquipped = hit.collider.gameObject;
+                itemEquipped.GetComponent<Rigidbody>().isKinematic = true;
                 itemEquipped.transform.parent = itemSpawn;
                 itemEquipped.transform.localPosition = shotgunPosOffset;
                 itemEquipped.transform.localRotation = Quaternion.Euler(0,-5,0);
                 shotgun = itemEquipped.GetComponent<ShotgunFire>();
+
             }
-            for(int i = 0; i<itemNames.Length; i++)
+            else
             {
-                if(itemNames[i].Equals(hit.collider.gameObject.name))
+                for(int i = 0; i<itemNames.Length; i++)
                 {
-                    hasItem = true;
-                    itemEquipped = Instantiate(itemPrefabs[i], itemSpawn.position, itemSpawn.localRotation);
-                    itemEquipped.transform.parent = itemSpawn;
-                    itemEquipped.transform.localPosition = Vector3.zero;
-                    itemEquipped.transform.localRotation = Quaternion.identity;
+                    if(itemNames[i].Equals(hit.collider.gameObject.name))
+                    {
+                        hasItem = true;
+                        itemEquipped = Instantiate(itemPrefabs[i], itemSpawn.position, itemSpawn.localRotation);
+                        itemEquipped.transform.parent = itemSpawn;
+                        itemEquipped.transform.localPosition = Vector3.zero;
+                        itemEquipped.transform.localRotation = Quaternion.identity;
+                    }
                 }
             }
         }
@@ -111,7 +116,7 @@ public class PlayerController : MonoBehaviour
         {
             hasItem = false;
             itemEquipped.GetComponent<Collider>().enabled = true;
-            Debug.Log("Did Hit: " + hit.collider.gameObject.name);
+            //Debug.Log("Did Hit: " + hit.collider.gameObject.name);
             customerManager.GiveCustomerItem(itemEquipped.name);
             itemEquipped.transform.parent = counterSpawn;
             itemEquipped.transform.localPosition = Vector3.zero;
@@ -131,12 +136,22 @@ public class PlayerController : MonoBehaviour
     private void DropItem()
     {
         hasItem = false;
+        shotgunEquipped = false;
         Rigidbody rb = itemEquipped.GetComponent<Rigidbody>();
         rb.isKinematic = false;
-        rb.AddForce(itemEquipped.transform.forward * 100f);
+        if(shotgun == null)
+        {
+            rb.AddForce(itemEquipped.transform.forward * 100f);
+        }
+        else
+        {
+            rb.AddForce(itemEquipped.transform.forward * -500f);
+        }
+        
         itemEquipped.transform.parent = null;
         //Destroy(itemEquipped, 3);
         itemEquipped = null;
+        shotgun = null;
     }
 
     private void BobItem()

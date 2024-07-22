@@ -8,12 +8,12 @@ public class ShotgunFire : MonoBehaviour
     [SerializeField] private float fireCooldown; //seconds
     [SerializeField] private float maxOffset;
     [SerializeField] private int damage = 1;
-    [SerializeField] private Transform cam;
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Recoil recoil;
 
     private float fireTimer; //seconds
+    private Transform cam;
     private InputManager inputManager;
 
     // Start is called before the first frame update
@@ -24,16 +24,16 @@ public class ShotgunFire : MonoBehaviour
         fireTimer = 0f;       
     }
 
-    void Update()
-    {
+    // void Update()
+    // {
 
-        fireTimer += Time.deltaTime;
+    //     fireTimer += Time.deltaTime;
                     
-    }
+    // }
 
     public void Shoot()
     {
-        if(inputManager.PlayerFired() && fireTimer >= fireCooldown)
+        if(inputManager.PlayerFired())
         {
             //AudioManager.instance.PlayGunShot(bulletSpawn);
             recoil.RecoilFire();
@@ -59,9 +59,7 @@ public class ShotgunFire : MonoBehaviour
                 TrailRenderer bulletTrail = Instantiate(trail,bulletSpawn.transform.position, Quaternion.identity);
                 StartCoroutine(SpawnTrail(bulletTrail, hit, bulletDir[i]));
             }
-            
-            
-            
+             
         }
     }
 
