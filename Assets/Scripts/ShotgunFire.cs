@@ -53,6 +53,10 @@ public class ShotgunFire : MonoBehaviour
                 if (Physics.Raycast(cam.transform.position, bulletDir[i], out hit, Mathf.Infinity))
                 {
                     Debug.Log("Did Hit: " + hit.collider.gameObject.name);
+                    if(hit.collider.gameObject.tag == "Customer")
+                    {
+                        hit.collider.gameObject.GetComponent<CustomerBehaviour>().Die();
+                    }
                 }
                 // Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 10, Color.yellow);
                 // Debug.Log("Ray: " + cam.transform.TransformDirection(Vector3.forward) * 10);

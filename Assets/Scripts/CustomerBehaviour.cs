@@ -7,6 +7,7 @@ using TMPro;
 public class CustomerBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject speechBubble;
+    [SerializeField] private Rigidbody [] rbs;
     [SerializeField] private TextDisplay textDisplay;
     [SerializeField] private TextMeshProUGUI speech;
     [SerializeField] private NavMeshAgent agent;    
@@ -68,6 +69,28 @@ public class CustomerBehaviour : MonoBehaviour
                     Destroy(this.gameObject);
                 }
                 break;
+        }
+    }
+
+    public void Die()
+    {
+        if(state == CustomerState.Dead)
+        {
+            return;
+        }
+        state = CustomerState.Dead;
+        agent.enabled = false;
+        DisableKinematics();   
+        GetComponent<Rigidbody>().AddForce(transform.forward * -500f);     
+        speechBubble.SetActive(false);
+        customerManager.NextCustomer();
+    }
+
+    private void DisableKinematics()
+    {
+        foreach(Rigidbody rb in rbs)
+        {
+            rb.isKinematic = false;
         }
     }
 

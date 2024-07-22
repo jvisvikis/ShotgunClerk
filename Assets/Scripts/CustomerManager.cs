@@ -42,6 +42,12 @@ public class CustomerManager : MonoBehaviour
 
     public void NextCustomer()
     {
+        StartCoroutine(NextCustomer(Random.Range(1,4)));        
+    }
+
+    public IEnumerator NextCustomer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         if(idx < customerPrefabs.Count)
         {
             currentCustomer = Instantiate(customerPrefabs[idx++], customerSpawn.position, Quaternion.identity);
@@ -53,7 +59,6 @@ public class CustomerManager : MonoBehaviour
             //End Day
             GameManager.instance.DayEnd();
         }
-        
     }
 
 

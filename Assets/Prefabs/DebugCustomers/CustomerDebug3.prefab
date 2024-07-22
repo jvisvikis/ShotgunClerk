@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 6614969330184232728}
   m_Layer: 0
   m_Name: CustomerDebug3
-  m_TagString: Untagged
+  m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,6 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechBubble: {fileID: 2357271409886643914}
+  rbs:
+  - {fileID: 5912697313077824480}
   textDisplay: {fileID: 0}
   speech: {fileID: 1289071934984651174}
   agent: {fileID: 182569114121153252}
@@ -386,7 +388,6 @@ GameObject:
   - component: {fileID: 3444625329099227794}
   - component: {fileID: 2040627424309026393}
   - component: {fileID: 7634658113991856100}
-  - component: {fileID: 5788527478359333271}
   m_Layer: 0
   m_Name: Eyes
   m_TagString: Untagged
@@ -459,27 +460,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5788527478359333271
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5578426060049151856}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8667815029452716611
 GameObject:
   m_ObjectHideFlags: 0
