@@ -6,21 +6,34 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 2.0f;
-    [SerializeField] private float jumpHeight = 1.0f;
-    [SerializeField] private float gravityValue = -9.81f;
+    [SerializeField] private float bounceSpeed = 5f;
+    [SerializeField] private string [] itemNames;
+    [SerializeField] private GameObject [] itemPrefabs;
     [SerializeField] private Transform camTransform;
+    [SerializeField] private Transform counterSpawn;
+    [SerializeField] private Transform itemSpawn;
+    [SerializeField] private LayerMask itemLayer;
+    [SerializeField] private LayerMask counterLayer;
 
+    public GameObject itemEquipped {get;set;}
+
+    private bool groundedPlayer;
+    private bool hasItem;   
+    private Camera cam;
     private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;    
+    private CustomerManager customerManager;
+    private Vector3 playerVelocity; 
     private InputManager inputManager;
 
     private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        cam = Camera.main;
+        counterSpawn = GameObject.Find("ItemSpawn").transform;
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.instance;
+        customerManager = CustomerManager.instance;
     }
 
     void Update()
@@ -32,15 +45,89 @@ public class PlayerController : MonoBehaviour
         move.y = 0;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        if(inputManager.PlayerFired())
+        if(inputManager.PlayerFired() && !hasItem)
         {
-            
+            GrabItem();
         }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        else if(inputManager.PlayerFired())
+        {
+            PlaceItem();
+        }
         
+        // if(itemEquipped != null)
+        // {
+        //     BobItem();
+        // }
         controller.Move(playerVelocity * Time.deltaTime);
         
     }
 
+    private void GrabItem()
+    {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, itemLayer))
+        {
+            Debug.Log("Did Hit: " + hit.collider.gameObject.name);
+            for(int i = 0; i<itemNames.Length; i++)
+            {
+                if(itemNames[i].Equals(hit.collider.gameObject.name))
+                {
+                    hasItem = true;
+                    itemEquipped = Instantiate(itemPrefabs[i], itemSpawn.position, itemSpawn.localRotation);
+                    itemEquipped.transform.parent = itemSpawn;
+                    itemEquipped.transform.localPosition = Vector3.zero;
+                    itemEquipped.transform.localRotation = Quaternion.identity;
+                }
+            }
+        }
+    }
+
+    private void PlaceItem()
+    {
+        itemEquipped.GetComponent<Collider>().enabled = false;
+        RaycastHit hit;
+        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, counterLayer))
+        {
+            hasItem = false;
+            itemEquipped.GetComponent<Collider>().enabled = true;
+            Debug.Log("Did Hit: " + hit.collider.gameObject.name);
+            customerManager.GiveCustomerItem(itemEquipped.name);
+            itemEquipped.transform.parent = counterSpawn;
+            itemEquipped.transform.localPosition = Vector3.zero;
+            Rigidbody rb = itemEquipped.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            Destroy(itemEquipped, customerManager.thankTime);
+            itemEquipped = null;
+        }
+        else
+        {
+            itemEquipped.GetComponent<Collider>().enabled = true;
+            DropItem();
+        }
+
+    }
+
+    private void DropItem()
+    {
+        hasItem = false;
+        Rigidbody rb = itemEquipped.GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        rb.AddForce(itemEquipped.transform.forward * 100f);
+        itemEquipped.transform.parent = null;
+        Destroy(itemEquipped, 3);
+        itemEquipped = null;
+    }
+
+    private void BobItem()
+    {
+        float sinValue = Mathf.Sin(Time.time * controller.velocity.magnitude);
+        float velocity = controller.velocity.magnitude/playerSpeed;
+        Debug.Log(velocity);
+        float yPos = Mathf.Lerp(0.1f * velocity, -0.1f * velocity, Mathf.Abs(sinValue));
+        itemEquipped.transform.localPosition = new Vector3(itemEquipped.transform.localPosition.x, yPos, itemEquipped.transform.localPosition.z);
+        itemEquipped.transform.localRotation = Quaternion.identity;
+        //Rotate
+        // itemEquipped.transform.Rotate(Vector3.up, Time.deltaTime * 3);
+    }
 }
