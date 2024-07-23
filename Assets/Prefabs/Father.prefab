@@ -228,6 +228,13 @@ MonoBehaviour:
   - SEE!!! It's that easy for someone to rob ya!
   - Make sure you grab the shotgun before they pull it on you.
   - See ya later kiddo!
+  dayTwoLines:
+  - Hey kiddo.
+  - I got something for ya.
+  - A little present from papa.
+  - Here is a trusty old radio. It's tuned. INTO. THE BEST. NEWS STATION. EVER!!!
+  - So you can keep your ear out for anything, SUSPICIOUS!
+  - See ya later kiddo.
   dayOneAudioClips:
   - {fileID: 8300000, guid: dc10802f924df634ca7ad7bba364824b, type: 3}
   - {fileID: 8300000, guid: 7461e9ce08b4db54ea7a628382a7b098, type: 3}
@@ -247,6 +254,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0feae56330d2032449b7d1b39f1202c9, type: 3}
   - {fileID: 8300000, guid: ae96ee51849ef404bbb0d6bb6b8b118c, type: 3}
   - {fileID: 8300000, guid: ed36f9090ec24964bbca6857a7ccf6b8, type: 3}
+  dayTwoAudioClips:
+  - {fileID: 8300000, guid: fb6124201eb7bcc4aad0dab488c89048, type: 3}
+  - {fileID: 8300000, guid: a353a475702955a4dae4be99e11d75b3, type: 3}
+  - {fileID: 8300000, guid: c0e99d549751e0347b50ad993e8f0bbe, type: 3}
+  - {fileID: 8300000, guid: 35b3fda612745fd47b245f8f8563f770, type: 3}
+  - {fileID: 8300000, guid: 8063fb361f8d9594f96b6c4d7504133f, type: 3}
+  - {fileID: 8300000, guid: a4d4695de5ef61242a98759d225c9d38, type: 3}
 --- !u!114 &4441471325747763068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,10 +309,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 5047499668269818505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.1, y: 0.3}
+  m_AnchorMax: {x: 0.9, y: 0.85}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: -20}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8570346639059457868
 CanvasRenderer:
@@ -328,10 +342,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gimme item plz
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -515,7 +529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 100, y: 50}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8780308056531467143
@@ -546,7 +560,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b8e07250aef836a408258e59f71ebbd3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -593,7 +607,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 2.75}
-  m_SizeDelta: {x: 200, y: 100}
+  m_SizeDelta: {x: 250, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2664919145351968706
 Canvas:

@@ -8,9 +8,9 @@ public class InputManager : MonoBehaviour
     private Controls playerControls;
     
     void Awake()
-    {
+    {        
         if(instance != null && instance != this)
-        {
+        {            
             Destroy(this.gameObject);
         }
         else
@@ -18,6 +18,7 @@ public class InputManager : MonoBehaviour
             instance = this;
         }
         playerControls = new Controls();
+        
     }
 
     void OnEnable()

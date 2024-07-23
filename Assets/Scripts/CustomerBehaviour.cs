@@ -6,6 +6,7 @@ using TMPro;
 
 public class CustomerBehaviour : MonoBehaviour
 {
+    [SerializeField] private string customerName;
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private Rigidbody [] rbs;
     [SerializeField] private TextDisplay textDisplay;
@@ -18,6 +19,7 @@ public class CustomerBehaviour : MonoBehaviour
     public Transform counterLine {get; set;}
     public Transform storeEntrance {get; set;}
 
+    private GameManager gameManager;
     private PlayerController player;
     private CustomerManager customerManager;
     private CustomerState state;
@@ -30,6 +32,7 @@ public class CustomerBehaviour : MonoBehaviour
         speech.text = entranceSpeech;
         player = FindObjectOfType<PlayerController>();
         customerManager = CustomerManager.instance;
+        gameManager = GameManager.instance;
         state = CustomerState.EnterStore;
         agent.SetDestination(counterLine.position);
     }   
@@ -52,10 +55,6 @@ public class CustomerBehaviour : MonoBehaviour
                 FacePlayer();
                 if(served)
                 {
-                    if(robbing)
-                    {
-                        //rob
-                    }
                     agent.SetDestination(storeEntrance.position);
                     state = CustomerState.ExitStore;
                 }
@@ -65,11 +64,25 @@ public class CustomerBehaviour : MonoBehaviour
             case CustomerState.ExitStore:
                 if(transform.position.x == storeEntrance.position.x && transform.position.z == storeEntrance.position.z)
                 {
+                    if(robbing)
+                    {
+                        gameManager.Robbed();
+                    }
                     customerManager.NextCustomer();
                     Destroy(this.gameObject);
                 }
                 break;
         }
+    }
+
+    public bool GetRobbing()
+    {
+        return robbing;
+    }
+
+    public string GetName()
+    {
+        return customerName;
     }
 
     public void Die()
@@ -83,6 +96,8 @@ public class CustomerBehaviour : MonoBehaviour
         DisableKinematics();   
         GetComponent<Rigidbody>().AddForce(transform.forward * -500f);     
         speechBubble.SetActive(false);
+        gameManager.KilledCustomer(robbing);
+        customerManager.AddDeadCustomers(this);
         customerManager.NextCustomer();
     }
 
@@ -104,7 +119,6 @@ public class CustomerBehaviour : MonoBehaviour
 
     public void TakeItem(string itemName)
     {
-        Debug.Log(itemName);
         if(itemName.Contains(askingItem))
         {
             StartCoroutine(SayThanks(customerManager.thankTime));
@@ -113,6 +127,7 @@ public class CustomerBehaviour : MonoBehaviour
 
     public IEnumerator SayThanks(float duration)
     {
+        gameManager.Served(Mathf.Round(Random.Range(5,100)*100)/100.0f);
         textDisplay.TypeLine("Thank you!");
         yield return new WaitForSeconds(duration);
         served = true;

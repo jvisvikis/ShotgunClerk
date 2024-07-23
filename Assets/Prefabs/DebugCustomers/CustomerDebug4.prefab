@@ -303,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132109bd366638a489dfbe04e45003cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: DebugRobber
   speechBubble: {fileID: 2357271409886643914}
   rbs:
   - {fileID: -2676351928004399709}

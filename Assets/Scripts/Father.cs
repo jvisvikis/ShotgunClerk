@@ -41,23 +41,41 @@ public class Father : MonoBehaviour
 
         if(player.itemEquipped != null && player.itemEquipped.name.Contains("Cigarettes"))
         {
-            Debug.Log("Player has cigs");
             playerHasCigs = true;
         }
 
-        if(agent.destination == transform.position && !startedTalking)
+        if(gameManager.day == 1)
         {
-            speechBubble.SetActive(true);
-            startedTalking = true;
-            StartCoroutine(StartTalking(dayOneLines, dayOneAudioClips, 0, 15));
-            Debug.Log("At Counter");
+            if(agent.destination == transform.position && !startedTalking)
+            {
+                speechBubble.SetActive(true);
+                startedTalking = true;
+                StartCoroutine(StartTalking(dayOneLines, dayOneAudioClips, 0, 15));
+            }
+            if(agent.destination == transform.position && stoppedTalking && !dayStarted)
+            {
+                dayStarted = true;
+                StartCoroutine(StartDay(3f)); 
+                Destroy(this.gameObject,3.5f);           
+            }
         }
-        if(agent.destination == transform.position && stoppedTalking && !dayStarted)
+        if(gameManager.day == 2)
         {
-            dayStarted = true;
-            StartCoroutine(StartDay(3f)); 
-            Destroy(this.gameObject,3.5f);           
+            if(agent.destination == transform.position && !startedTalking)
+            {
+                speechBubble.SetActive(true);
+                startedTalking = true;
+                StartCoroutine(StartTalking(dayTwoLines, dayTwoAudioClips, 0, dayTwoAudioClips.Length));
+            }
+            if((agent.destination == transform.position && stoppedTalking && !dayStarted) )
+            {
+                Debug.Log("Please start");
+                dayStarted = true;
+                StartCoroutine(StartDay(3f)); 
+                Destroy(this.gameObject,3.5f);           
+            }
         }
+        
     }
 
     private void FacePlayer()

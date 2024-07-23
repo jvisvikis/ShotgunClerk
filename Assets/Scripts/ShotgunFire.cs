@@ -10,7 +10,6 @@ public class ShotgunFire : MonoBehaviour
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Recoil recoil;
 
-    private float fireTimer; //seconds
     private Transform cam;
     private InputManager inputManager;
 
@@ -18,8 +17,7 @@ public class ShotgunFire : MonoBehaviour
     void Start()
     {
         cam = Camera.main.transform;
-        inputManager = InputManager.instance;
-        fireTimer = 0f;       
+        inputManager = InputManager.instance;    
     }
 
     public void Shoot()
@@ -28,7 +26,6 @@ public class ShotgunFire : MonoBehaviour
         {
             //AudioManager.instance.PlayGunShot(bulletSpawn);
             recoil.RecoilFire();
-            fireTimer = 0;
             Vector3 [] bulletDir = new Vector3[6];
             for(int i = 0; i < bulletDir.Length; i++)
             {
