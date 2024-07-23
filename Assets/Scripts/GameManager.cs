@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         string dayToLoad = $"Day{day}";
         customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
         customerManager.ResetIndex();
+        customerManager.ResetDeadCustomers();
         customerManager.NextCustomer();
     }
 
