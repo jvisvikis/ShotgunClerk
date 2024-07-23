@@ -5,12 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private GameObject Father;
+    [SerializeField] private Father fatherPrefab;
 
     public int day {get;set;}
     public float money {get; set;}
 
     private CustomerManager customerManager;
+    private Father father;
 
     void Awake()
     {
@@ -29,17 +30,25 @@ public class GameManager : MonoBehaviour
     {
         day = 1;
         customerManager = CustomerManager.instance;
-        DayStart();
+        BeforeDayStart();
     }
 
-    public void DayStart()
+    public void BeforeDayStart()
     {
+        father = Instantiate(fatherPrefab, customerManager.GetCustomerSpawn().position, Quaternion.identity);
+    }
+
+    public void StartDay()
+    {
+        Debug.Log("Day Started");
         string dayToLoad = $"Day{day}";
         customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
         customerManager.NextCustomer();
     }
 
-    public void DayEnd()
+
+
+    public void EndDay()
     {
         day++;
         //Show list of dead customers

@@ -570,10 +570,12 @@ MonoBehaviour:
   - ItemA
   - ItemB
   - ItemC
+  - Cigarettes
   itemPrefabs:
   - {fileID: 2057908275347036022, guid: b90e3fb9b457b7b49902c7de8315d83f, type: 3}
   - {fileID: 8787058011379138820, guid: fe3951ff4f24b704ebb168ad14e18d64, type: 3}
   - {fileID: 1158629369759511802, guid: 90b7d0e244a385e4fbfd9a4a178db066, type: 3}
+  - {fileID: 1158629369759511802, guid: fc065ce88ee72d84c8afc7be4d4df23d, type: 3}
   camTransform: {fileID: 6302781138843721078}
   counterSpawn: {fileID: 0}
   itemSpawn: {fileID: 7550441371934097360}

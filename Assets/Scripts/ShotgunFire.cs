@@ -5,9 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ShotgunFire : MonoBehaviour
 {
-    [SerializeField] private float fireCooldown; //seconds
     [SerializeField] private float maxOffset;
-    [SerializeField] private int damage = 1;
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Recoil recoil;
@@ -23,13 +21,6 @@ public class ShotgunFire : MonoBehaviour
         inputManager = InputManager.instance;
         fireTimer = 0f;       
     }
-
-    // void Update()
-    // {
-
-    //     fireTimer += Time.deltaTime;
-                    
-    // }
 
     public void Shoot()
     {
@@ -62,8 +53,7 @@ public class ShotgunFire : MonoBehaviour
                 // Debug.Log("Ray: " + cam.transform.TransformDirection(Vector3.forward) * 10);
                 TrailRenderer bulletTrail = Instantiate(trail,bulletSpawn.transform.position, Quaternion.identity);
                 StartCoroutine(SpawnTrail(bulletTrail, hit, bulletDir[i]));
-            }
-             
+            }    
         }
     }
 

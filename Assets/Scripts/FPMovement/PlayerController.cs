@@ -117,7 +117,10 @@ public class PlayerController : MonoBehaviour
             hasItem = false;
             itemEquipped.GetComponent<Collider>().enabled = true;
             //Debug.Log("Did Hit: " + hit.collider.gameObject.name);
-            customerManager.GiveCustomerItem(itemEquipped.name);
+            if(customerManager.currentCustomer != null)
+            {
+                customerManager.GiveCustomerItem(itemEquipped.name);
+            }            
             itemEquipped.transform.parent = counterSpawn;
             itemEquipped.transform.localPosition = Vector3.zero;
             Rigidbody rb = itemEquipped.GetComponent<Rigidbody>();

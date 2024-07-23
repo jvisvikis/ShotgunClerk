@@ -35,6 +35,16 @@ public class CustomerManager : MonoBehaviour
         customersDead = new List<CustomerBehaviour>();
     }
 
+    public Transform GetCustomerSpawn()
+    {
+        return customerSpawn;
+    }
+
+    public Transform GetCounterPlacement()
+    {
+        return counterPlacement;
+    }
+
     public void AddDeadCustomers(CustomerBehaviour customer)
     {
         customersDead.Add(customer);
@@ -47,6 +57,7 @@ public class CustomerManager : MonoBehaviour
 
     public void NextCustomer()
     {
+        Debug.Log("Send him in");
         StartCoroutine(NextCustomer(Random.Range(1,4)));        
     }
 
@@ -55,6 +66,7 @@ public class CustomerManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if(idx < customerPrefabs.Length)
         {
+            Debug.Log("Oh hi Mark");
             currentCustomer = Instantiate(customerPrefabs[idx++], customerSpawn.position, Quaternion.identity);
             currentCustomer.storeEntrance = customerSpawn;
             currentCustomer.counterLine = counterPlacement;
@@ -62,7 +74,7 @@ public class CustomerManager : MonoBehaviour
         else
         {
             //End Day
-            GameManager.instance.DayEnd();
+            GameManager.instance.EndDay();
         }
     }
 
