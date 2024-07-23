@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_7b4330e1a81f4b70a2423f612b0fe8b1_Texture_1_Texture2D:
-        m_Texture: {fileID: 2800000, guid: cb849797e92b73d4280f4fcbc3eba143, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d8ccf208c4e05e4d843ac466150bd79, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -98,7 +98,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Colour_Power: 0.75
+    - _Colour_Power: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -135,7 +135,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive_Colour: {r: 1, g: 0.9482843, b: 0.26886788, a: 0}
     - _Frenel_Colour: {r: 1, g: 0.95096445, b: 0.8066038, a: 0}
-    - _Shadow_Colour: {r: 0.76343066, g: 0.734247, b: 0.9433962, a: 0}
+    - _Shadow_Colour: {r: 0.78653437, g: 0.7950624, b: 0.9528302, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &183027202681137007
