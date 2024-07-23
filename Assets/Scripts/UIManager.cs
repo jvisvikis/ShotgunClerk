@@ -57,6 +57,8 @@ public class UIManager : MonoBehaviour
         float amount = 500;
         for(int i = 0; i<customerManager.customersDead.Count; i++)
         {
+            deadCustomers[i].gameObject.SetActive(true);
+            deadCustomersStatus[i].gameObject.SetActive(true);
             deadCustomers[i].text = customerManager.customersDead[i].GetName();
             string status = customerManager.customersDead[i].GetRobbing() ? $"Thief <color=green>+${amount}" : $"Civilian <color=red>-${amount}";
             deadCustomersStatus[i].text = status;
