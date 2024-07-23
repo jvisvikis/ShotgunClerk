@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Day Started");
         string dayToLoad = $"Day{day}";
         customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
+        customerManager.ResetIndex();
         customerManager.NextCustomer();
     }
 

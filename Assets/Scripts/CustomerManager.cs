@@ -46,9 +46,19 @@ public class CustomerManager : MonoBehaviour
         return counterPlacement;
     }
 
+    public void ResetIndex()
+    {
+        idx = 0;
+    }
+
     public void AddDeadCustomers(CustomerBehaviour customer)
     {
         customersDead.Add(customer);
+    }
+
+    public void ResetDeadCustomers()
+    {
+        customersDead.Clear();
     }
 
     public void GiveCustomerItem(string itemName)
