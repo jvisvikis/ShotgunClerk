@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private Camera cam;
     private CharacterController controller;
     private CustomerManager customerManager;
+    private GameManager gameManager;
     private Vector3 playerVelocity; 
     private InputManager inputManager;
 
@@ -37,11 +38,12 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.instance;
         customerManager = CustomerManager.instance;
+        gameManager = GameManager.instance;
     }
 
     void Update()
     {
-           
+        
         Vector2 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0, movement.y);
         move = camTransform.forward * move.z + camTransform.right * move.x;
@@ -65,7 +67,8 @@ public class PlayerController : MonoBehaviour
         // {
         //     BobItem();
         // }
-        controller.Move(playerVelocity * Time.deltaTime);
+        if(gameManager.dayOver)
+            controller.Move(playerVelocity * Time.deltaTime);
         
     }
 

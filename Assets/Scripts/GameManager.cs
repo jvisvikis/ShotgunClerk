@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] private Father fatherPrefab;
 
-    public int day {get;set;}
+    public int day {get; set;}
     public float money {get; set;}
     public float gross {get; set;}
     public float killCost {get; set;}
-    public float robCost {get;set;}
-    private bool dayOver;
+    public float robCost {get; set;}
+    public bool dayOver  {get; set;}
 
     private CustomerManager customerManager;
     private InputManager inputManager;
@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
         customerManager.ResetIndex();
         customerManager.ResetDeadCustomers();
         customerManager.NextCustomer();
+        if(day >= 2)
+            FindObjectOfType<Radio>().GetComponent<Radio>().TurnOnRadio();
     }
 
     public void Served(float amount)
