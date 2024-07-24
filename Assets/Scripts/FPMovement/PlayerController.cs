@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, itemLayer))
+        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 2, itemLayer))
         {
             if(hit.collider == null)
             {
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
     {
         // itemEquipped.GetComponent<Collider>().enabled = false;
         RaycastHit hit;
-        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, counterLayer))
+        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 2, counterLayer))
         {
             hasItem = false;
             //itemEquipped.GetComponent<Collider>().enabled = true;
