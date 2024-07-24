@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 2.0f;
     [SerializeField] private float bounceSpeed = 5f;
+    [SerializeField] private float gravityValue = -9.81f;
     [SerializeField] private string [] itemNames;
     [SerializeField] private GameObject [] itemPrefabs;
     [SerializeField] private Transform camTransform;
@@ -37,7 +38,6 @@ public class PlayerController : MonoBehaviour
         counterSpawn = GameObject.Find("ItemSpawn").transform;
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.instance;
-        Debug.Log("InputManager: " + inputManager);
         customerManager = CustomerManager.instance;
         gameManager = GameManager.instance;
     }
@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
         // {
         //     BobItem();
         // }
+        playerVelocity.y += gravityValue * Time.deltaTime;
         if(gameManager.dayOver)
             controller.Move(playerVelocity * Time.deltaTime);
         
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
             {
                 hasItem = true;
                 shotgunEquipped = true;
-                itemEquipped = hit.collider.gameObject;
+                itemEquipped = hit.collider.gameObject.transform.root.gameObject;
                 itemEquipped.GetComponent<Rigidbody>().isKinematic = true;
                 itemEquipped.transform.parent = itemSpawn;
                 itemEquipped.transform.localPosition = shotgunPosOffset;

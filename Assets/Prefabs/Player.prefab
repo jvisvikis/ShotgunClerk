@@ -567,15 +567,19 @@ MonoBehaviour:
   playerSpeed: 5
   bounceSpeed: 5
   itemNames:
-  - ItemA
-  - ItemB
-  - ItemC
+  - Banana
+  - Milk
+  - OrangeDrink
+  - Sandwich
+  - BlueDrink
   - Cigarettes
   itemPrefabs:
-  - {fileID: 2057908275347036022, guid: b90e3fb9b457b7b49902c7de8315d83f, type: 3}
-  - {fileID: 8787058011379138820, guid: fe3951ff4f24b704ebb168ad14e18d64, type: 3}
-  - {fileID: 1158629369759511802, guid: 90b7d0e244a385e4fbfd9a4a178db066, type: 3}
-  - {fileID: 1158629369759511802, guid: fc065ce88ee72d84c8afc7be4d4df23d, type: 3}
+  - {fileID: 497934580215026004, guid: 233e72db58b67794e9abdd60d5db7ce6, type: 3}
+  - {fileID: 6449777602013795153, guid: 2d72773af258c994aaff8248a6e5f81c, type: 3}
+  - {fileID: 1813933674439944473, guid: 37b6b8fa02114d9489b4ded850a7967a, type: 3}
+  - {fileID: 5352986411869808331, guid: 6ffcdd93e0a387943932065271a3922d, type: 3}
+  - {fileID: 2229518622817794787, guid: f763ab34cc99c914c860780af829b0c7, type: 3}
+  - {fileID: 6099096041037065111, guid: d31be8f3ad79ba04b998b0ae560781b8, type: 3}
   camTransform: {fileID: 6302781138843721078}
   counterSpawn: {fileID: 0}
   itemSpawn: {fileID: 7550441371934097360}

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 2319131121850870783}
   - component: {fileID: 8734920211588443593}
   - component: {fileID: 4441471325747763068}
+  - component: {fileID: -4447686746706258388}
   m_Layer: 0
   m_Name: Father
   m_TagString: Untagged
@@ -277,6 +278,29 @@ MonoBehaviour:
   charactersPerSecond: 25
   textInterval: 0
   dialogueText: {fileID: 5503215297803949013}
+--- !u!136 &-4447686746706258388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3289822485446749852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5605258
+  m_Height: 1.1431398
+  m_Direction: 1
+  m_Center: {x: -0.0010509789, y: 0.5627899, z: 0.098671086}
 --- !u!1 &6353924204364363914
 GameObject:
   m_ObjectHideFlags: 0
