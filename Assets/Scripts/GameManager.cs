@@ -45,10 +45,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(InputManager.instance.PlayerFired() && dayOver)
+        if(InputManager.instance.PlayerFired() && dayOver && day < 4)
         {
             //Load Next Day
             sceneManager.ReloadScene();
+        }
+
+        if(InputManager.instance.PlayerFired() && day > 3)
+        {
+            //GameOver
         }
     }
 
@@ -109,7 +114,6 @@ public class GameManager : MonoBehaviour
         dayOver = true;
         uiManager.EndDay(day);
         day++;
-    
     }
 
     public IEnumerator BeginDay()

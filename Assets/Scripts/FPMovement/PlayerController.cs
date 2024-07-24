@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 playerVelocity; 
     private InputManager inputManager;
 
-    private void Start()
+    void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         counterSpawn = GameObject.Find("ItemSpawn").transform;
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.instance;
+        Debug.Log("InputManager: " + inputManager);
         customerManager = CustomerManager.instance;
         gameManager = GameManager.instance;
     }

@@ -457,6 +457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3801623592976386005, guid: 2d7aa4a7e1baf2144bc52862f3efe333,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7666536934635173218, guid: 2d7aa4a7e1baf2144bc52862f3efe333,
         type: 3}
       propertyPath: m_Pivot.x
