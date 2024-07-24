@@ -143,20 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25fe32b94d3ced4883513d627267260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
+  waitTime: 10
   speechBubble: {fileID: 4092101621652600893}
   day2lines:
   - Panda at the zoo is sooo adorable!
   - The moon may be made of cheese. Is the world hungry enough for.....
   - There's a serial pecker on the loose. Clerks are advised to shoot on site!.
   - Did you know that banana, apple, orange, does not in fact pineapple?
-  - I scream for the icecream man... He's scary
+  - Thieving ninjas on the loose!
   day3lines:
-  - Ra ra ra ra
-  - Ah ah ah ah ah
-  - 'Roma a a a '
-  - Gaga oh lala
-  - Romance or something idk
+  - I scream for the icecream man... He's scary
+  - Crazy lady screaming for milk, is also screaming for jail time
+  - Boots and cats, boots and cats, boots and cats
+  - Is it pronounced "JIF" or "GIF"?
+  - This just in! All ninjas are thieves and rude people.
   textDisplay: {fileID: 190304396579415582}
 --- !u!114 &190304396579415582
 MonoBehaviour:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechTotext: 
-  charactersPerSecond: 90
+  charactersPerSecond: 10
   textInterval: 0
   dialogueText: {fileID: 2901048124046260741}
 --- !u!1001 &1644808314343345292

@@ -6119,16 +6119,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Radio
       objectReference: {fileID: 0}
-    - target: {fileID: 6372683643040383350, guid: 38abec230ad475447967347d7ce51011,
-        type: 3}
-      propertyPath: day2lines.Array.data[4]
-      value: 'Money gone, '
-      objectReference: {fileID: 0}
-    - target: {fileID: 6372683643040383350, guid: 38abec230ad475447967347d7ce51011,
-        type: 3}
-      propertyPath: day3lines.Array.data[0]
-      value: I scream for the icecream man... He's scary
-      objectReference: {fileID: 0}
     - target: {fileID: 6584117593214413692, guid: 38abec230ad475447967347d7ce51011,
         type: 3}
       propertyPath: m_LocalPosition.x

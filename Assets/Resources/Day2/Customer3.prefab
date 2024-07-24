@@ -81,7 +81,9 @@ MonoBehaviour:
   agent: {fileID: 182569114121153252}
   robbing: 1
   askingItem: Milk
-  entranceSpeech: []
+  entranceSpeech:
+  - It's nuts that you're here!
+  - Anyway, gimme milk
   thankYouSpeech: 
 --- !u!195 &182569114121153252
 NavMeshAgent:

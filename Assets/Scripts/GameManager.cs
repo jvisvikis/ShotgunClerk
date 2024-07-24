@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Day Started");
         AudioManager.instance.PlayBackgroundMusic();
         string dayToLoad = $"Day{day}";
+        uiManager.StartDay();
         customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
         customerManager.ResetIndex();
         customerManager.ResetDeadCustomers();

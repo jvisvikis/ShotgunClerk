@@ -80,8 +80,12 @@ MonoBehaviour:
   textDisplay: {fileID: 7382417609159577124}
   agent: {fileID: 182569114121153252}
   robbing: 1
-  askingItem: Milk
-  entranceSpeech: []
+  askingItem: ToiletPaper
+  entranceSpeech:
+  - Ba---GAWK!!!
+  - They're after me... I'm not gonna let them get me
+  - I'm gonna need something to protect myself!
+  - TOILET PAPER!!! YES THAT SHOULD DO IT
   thankYouSpeech: 
 --- !u!195 &182569114121153252
 NavMeshAgent:

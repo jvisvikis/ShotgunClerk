@@ -37,7 +37,7 @@ public class Radio : MonoBehaviour
             idx++;
             yield return new WaitForSeconds(waitTime);
             speechBubble.SetActive(false);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Random.Range(1,waitTime));
         }
     }
 }
