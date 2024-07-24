@@ -135,7 +135,7 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive_Colour: {r: 1, g: 0.9482843, b: 0.26886788, a: 0}
     - _Frenel_Colour: {r: 1, g: 0.95096445, b: 0.8066038, a: 0}
-    - _Shadow_Colour: {r: 0.78653437, g: 0.7950624, b: 0.9528302, a: 0}
+    - _Shadow_Colour: {r: 0.8490566, g: 0.6820195, b: 0.62077254, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &183027202681137007
