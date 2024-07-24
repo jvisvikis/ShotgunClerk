@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask itemLayer;
     [SerializeField] private LayerMask counterLayer;
     [SerializeField] private Vector3 shotgunPosOffset;
+    [SerializeField] private AudioClip shotgunPickup;
 
     public GameObject itemEquipped {get;set;}
     private ShotgunFire shotgun;
@@ -84,9 +85,9 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
-            Debug.Log(hit.collider.gameObject.name);
             if(hit.collider.gameObject.name.Contains("Shotgun"))
             {
+                AudioManager.instance.PlayAudio(shotgunPickup, transform);
                 hasItem = true;
                 shotgunEquipped = true;
                 itemEquipped = hit.collider.gameObject.transform.root.gameObject;

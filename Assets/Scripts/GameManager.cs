@@ -60,6 +60,11 @@ public class GameManager : MonoBehaviour
    
     public void BeforeDayStart()
     {
+        if(day == 1)
+        {
+            FindObjectOfType<Radio>().gameObject.SetActive(false);
+        }
+
         dayOver = false;
         if(customerManager == null)
         {
@@ -79,6 +84,7 @@ public class GameManager : MonoBehaviour
     public void StartDay()
     {
         Debug.Log("Day Started");
+        AudioManager.instance.PlayBackgroundMusic();
         string dayToLoad = $"Day{day}";
         customerManager.customerPrefabs = Resources.LoadAll<CustomerBehaviour>(dayToLoad);
         customerManager.ResetIndex();
@@ -86,8 +92,6 @@ public class GameManager : MonoBehaviour
         customerManager.NextCustomer();
         if(day >= 2)
             FindObjectOfType<Radio>().GetComponent<Radio>().TurnOnRadio();
-        else    
-            FindObjectOfType<Radio>().gameObject.SetActive(false);
     }
 
     public void Served(float amount)

@@ -71,9 +71,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34ae89467b82f134e81059d506bd37a6, type: 3}
   - {fileID: 8300000, guid: 0feae56330d2032449b7d1b39f1202c9, type: 3}
   gunShotSfx: {fileID: 0}
-  backgroundMusic: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 9c09e402b8ef24946a5c5876a68bdf1a, type: 3}
   audioPrefab: {fileID: 2978317331239793455, guid: d3720822d5ceb9d41b5718ee4dbbfa6e,
     type: 3}
-  audioBackgroundPrefab: {fileID: 0}
+  audioBackgroundPrefab: {fileID: 2978317331239793455, guid: 9724bef5f5f3b7f488ad140af6793926,
+    type: 3}
   volume: 1
-  backgroundVolume: 0.503
+  backgroundVolume: 0.15

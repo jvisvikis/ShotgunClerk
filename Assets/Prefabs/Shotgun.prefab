@@ -111,6 +111,7 @@ MonoBehaviour:
   bulletSpawn: {fileID: 1458322732474091737}
   trail: {fileID: 7322077780853487261, guid: b1652e954d552304e8499535d5e15922, type: 3}
   recoil: {fileID: 975498441510400507}
+  shotgunBlast: {fileID: 8300000, guid: f05086cb7decedb4bb4552d344d52722, type: 3}
 --- !u!114 &975498441510400507
 MonoBehaviour:
   m_ObjectHideFlags: 0

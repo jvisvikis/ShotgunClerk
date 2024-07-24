@@ -9,6 +9,7 @@ public class ShotgunFire : MonoBehaviour
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Recoil recoil;
+    [SerializeField] private AudioClip shotgunBlast;
 
     private Transform cam;
     private InputManager inputManager;
@@ -24,7 +25,8 @@ public class ShotgunFire : MonoBehaviour
     {
         if(inputManager.PlayerFired())
         {
-            //AudioManager.instance.PlayGunShot(bulletSpawn);
+
+            AudioManager.instance.PlayAudio(shotgunBlast, bulletSpawn);
             recoil.RecoilFire();
             Vector3 [] bulletDir = new Vector3[6];
             for(int i = 0; i < bulletDir.Length; i++)
@@ -38,7 +40,7 @@ public class ShotgunFire : MonoBehaviour
                 );
 
                 RaycastHit hit;
-                if (Physics.Raycast(cam.transform.position, bulletDir[i], out hit, Mathf.Infinity))
+                if (Physics.Raycast(cam.transform.position, bulletDir[i], out hit, 5f))
                 {
                     Debug.Log("Did Hit: " + hit.collider.gameObject.name);
                     if(hit.collider.gameObject.tag == "Customer")
