@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            Debug.Log(hit.collider.gameObject.name);
             if(hit.collider.gameObject.name.Contains("Shotgun"))
             {
                 hasItem = true;
@@ -100,7 +101,9 @@ public class PlayerController : MonoBehaviour
             {
                 for(int i = 0; i<itemNames.Length; i++)
                 {
-                    if(itemNames[i].Equals(hit.collider.gameObject.name))
+                    Debug.Log(itemNames[i] + " is " +hit.collider.gameObject.name);
+                    Debug.Log(itemNames[i].Contains(hit.collider.gameObject.name));
+                    if(itemNames[i].Contains(hit.collider.gameObject.name))
                     {
                         hasItem = true;
                         itemEquipped = Instantiate(itemPrefabs[i], itemSpawn.position, itemSpawn.localRotation);
@@ -115,12 +118,12 @@ public class PlayerController : MonoBehaviour
 
     private void PlaceItem()
     {
-        itemEquipped.GetComponent<Collider>().enabled = false;
+        // itemEquipped.GetComponent<Collider>().enabled = false;
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, counterLayer))
         {
             hasItem = false;
-            itemEquipped.GetComponent<Collider>().enabled = true;
+            //itemEquipped.GetComponent<Collider>().enabled = true;
             //Debug.Log("Did Hit: " + hit.collider.gameObject.name);
             if(customerManager.currentCustomer != null)
             {
@@ -135,7 +138,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            itemEquipped.GetComponent<Collider>().enabled = true;
+            //itemEquipped.GetComponent<Collider>().enabled = true;
             DropItem();
         }
 

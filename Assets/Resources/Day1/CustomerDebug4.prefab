@@ -80,9 +80,9 @@ MonoBehaviour:
   textDisplay: {fileID: 7382417609159577124}
   speech: {fileID: 5384147638766317388}
   agent: {fileID: 182569114121153252}
-  robbing: 1
-  askingItem: ItemB
-  entranceSpeech: Can I plz have the item of B's, also I'm robbing you
+  robbing: 0
+  askingItem: Milk
+  entranceSpeech: I need some MILK!!!
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

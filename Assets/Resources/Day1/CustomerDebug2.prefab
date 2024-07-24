@@ -248,9 +248,10 @@ MonoBehaviour:
   textDisplay: {fileID: 0}
   speech: {fileID: 2314829619196630643}
   agent: {fileID: 182569114121153252}
-  robbing: 0
-  askingItem: ItemB
-  entranceSpeech: Can I plz have the item of B's
+  robbing: 1
+  askingItem: BlueDrink
+  entranceSpeech: Hello I'm quite tired after that soccer game. Can I <i>steeaaall</i>,
+    I mean buy... a blue drink.
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

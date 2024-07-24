@@ -81,8 +81,9 @@ MonoBehaviour:
   speech: {fileID: 8056107373956011526}
   agent: {fileID: 182569114121153252}
   robbing: 0
-  askingItem: ItemC
-  entranceSpeech: Can I plz have the item of C's
+  askingItem: Banana
+  entranceSpeech: My son just came in here. He must be hungry. I'll take one banana
+    please.
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

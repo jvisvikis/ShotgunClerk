@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
         customerManager.NextCustomer();
         if(day >= 2)
             FindObjectOfType<Radio>().GetComponent<Radio>().TurnOnRadio();
+        else    
+            FindObjectOfType<Radio>().gameObject.SetActive(false);
     }
 
     public void Served(float amount)

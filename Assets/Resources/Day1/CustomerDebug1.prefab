@@ -249,8 +249,8 @@ MonoBehaviour:
   speech: {fileID: 4333550404104538751}
   agent: {fileID: 182569114121153252}
   robbing: 0
-  askingItem: ItemA
-  entranceSpeech: Can I plz have the item of A's
+  askingItem: Newspaper
+  entranceSpeech: It's hard to keep track of the news on the farm. Can I get a newspaper?
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

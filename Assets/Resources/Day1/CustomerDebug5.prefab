@@ -82,7 +82,8 @@ MonoBehaviour:
   agent: {fileID: 182569114121153252}
   robbing: 1
   askingItem: ItemA
-  entranceSpeech: I am Clonker the clown! ... Can I have cigarettes please...
+  entranceSpeech: I am Clonker the clown! ... Can I have cigarettes please. I can't
+    keep doing this...
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

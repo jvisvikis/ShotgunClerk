@@ -566,6 +566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5
   bounceSpeed: 5
+  gravityValue: -9.81
   itemNames:
   - Banana
   - Milk
@@ -573,6 +574,8 @@ MonoBehaviour:
   - Sandwich
   - BlueDrink
   - Cigarettes
+  - ToiletPaper
+  - Newspaper
   itemPrefabs:
   - {fileID: 497934580215026004, guid: 233e72db58b67794e9abdd60d5db7ce6, type: 3}
   - {fileID: 6449777602013795153, guid: 2d72773af258c994aaff8248a6e5f81c, type: 3}
@@ -580,6 +583,8 @@ MonoBehaviour:
   - {fileID: 5352986411869808331, guid: 6ffcdd93e0a387943932065271a3922d, type: 3}
   - {fileID: 2229518622817794787, guid: f763ab34cc99c914c860780af829b0c7, type: 3}
   - {fileID: 6099096041037065111, guid: d31be8f3ad79ba04b998b0ae560781b8, type: 3}
+  - {fileID: 3254909665443982257, guid: 1adfab31fd3e82347889987435121b50, type: 3}
+  - {fileID: 8843781499440727205, guid: 69cd5975fef3ef649a3a96f964acdf12, type: 3}
   camTransform: {fileID: 6302781138843721078}
   counterSpawn: {fileID: 0}
   itemSpawn: {fileID: 7550441371934097360}
