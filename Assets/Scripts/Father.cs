@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Father : MonoBehaviour
 {
     [SerializeField] private GameObject speechBubble;
+    [SerializeField] private GameObject shotgun;
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private TextDisplay textDisplay;
     [SerializeField] private string [] dayOneLines;
@@ -28,6 +29,7 @@ public class Father : MonoBehaviour
     void Start()
     {
         speechBubble.SetActive(false);
+        shotgun.SetActive(false);
         audioManager = AudioManager.instance;
         customerManager = CustomerManager.instance;
         gameManager = GameManager.instance;
@@ -102,6 +104,7 @@ public class Father : MonoBehaviour
             {
                 yield return null;
             }
+            shotgun.SetActive(true);
             yield return new WaitForSeconds(1f);
             StartCoroutine(StartTalking(lines, audioClips, idx, stopIdx));
         }
@@ -109,6 +112,7 @@ public class Father : MonoBehaviour
         {
             agent.SetDestination(customerManager.GetCustomerSpawn().position);
             stoppedTalking = true;
+            shotgun.SetActive(false);
             speechBubble.SetActive(false);
         }      
     }
