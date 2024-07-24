@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: -5721343548696152766}
   - component: {fileID: 7142017483525825216}
   m_Layer: 9
-  m_Name: CustomerDebug1
+  m_Name: Customer1
   m_TagString: Customer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,12 +245,16 @@ MonoBehaviour:
   speechBubble: {fileID: 3218765840557459527}
   rbs:
   - {fileID: -5721343548696152766}
-  textDisplay: {fileID: 0}
-  speech: {fileID: 4333550404104538751}
+  textDisplay: {fileID: 7142017483525825216}
   agent: {fileID: 182569114121153252}
   robbing: 0
   askingItem: Newspaper
-  entranceSpeech: It's hard to keep track of the news on the farm. Can I get a newspaper?
+  entranceSpeech:
+  - It's hard to keep track of the news.
+  - Especially being so busy on the farm.
+  - Speaking of news...
+  - Can I buy a newspaper off ya
+  thankYouSpeech: 
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.59607846, g: 0.5174475, b: 0.49019608, a: 1}
+  m_AmbientSkyColor: {r: 0.8, g: 0.6392157, b: 0.5803922, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -4637,7 +4637,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5485116956123099185, guid: c3ed805cfa7c899459ffe661bf537d5b, type: 3}
+    - {fileID: 665272469317104578, guid: c3ed805cfa7c899459ffe661bf537d5b, type: 3}
+    - {fileID: 590879708638900537, guid: c3ed805cfa7c899459ffe661bf537d5b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6115,6 +6118,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372683643040383350, guid: 38abec230ad475447967347d7ce51011,
+        type: 3}
+      propertyPath: day2lines.Array.data[4]
+      value: 'Money gone, '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372683643040383350, guid: 38abec230ad475447967347d7ce51011,
+        type: 3}
+      propertyPath: day3lines.Array.data[0]
+      value: I scream for the icecream man... He's scary
       objectReference: {fileID: 0}
     - target: {fileID: 6584117593214413692, guid: 38abec230ad475447967347d7ce51011,
         type: 3}

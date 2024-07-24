@@ -10,11 +10,11 @@ public class CustomerBehaviour : MonoBehaviour
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private Rigidbody [] rbs;
     [SerializeField] private TextDisplay textDisplay;
-    [SerializeField] private TextMeshProUGUI speech;
     [SerializeField] private NavMeshAgent agent;    
     [SerializeField] private bool robbing;
     [SerializeField] private string askingItem;
-    [SerializeField] private string entranceSpeech; 
+    [SerializeField] private string [] entranceSpeech; 
+    [SerializeField] private string thankYouSpeech;
 
     public Transform counterLine {get; set;}
     public Transform storeEntrance {get; set;}
@@ -29,7 +29,6 @@ public class CustomerBehaviour : MonoBehaviour
     {
         textDisplay = GetComponent<TextDisplay>();
         speechBubble.SetActive(false);
-        speech.text = entranceSpeech;
         player = FindObjectOfType<PlayerController>();
         customerManager = CustomerManager.instance;
         gameManager = GameManager.instance;
@@ -46,8 +45,8 @@ public class CustomerBehaviour : MonoBehaviour
                 FacePlayer();
                 if(transform.position.x == counterLine.position.x && transform.position.z == counterLine.position.z)
                 {
-                    textDisplay.TypeLine(entranceSpeech);
                     speechBubble.SetActive(true);
+                    StartCoroutine(StartTalking(5f));
                     state = CustomerState.AskedForItem;
                 }
                 break;
@@ -122,6 +121,16 @@ public class CustomerBehaviour : MonoBehaviour
         if(itemName.Contains(askingItem))
         {
             StartCoroutine(SayThanks(customerManager.thankTime));
+        }
+    }
+
+    public IEnumerator StartTalking(float interval)
+    {
+        int idx = 0;
+        while(idx < entranceSpeech.Length)
+        {
+            textDisplay.TypeLine(entranceSpeech[idx++]);
+            yield return new WaitForSeconds(interval);
         }
     }
 
