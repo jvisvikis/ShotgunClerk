@@ -78,11 +78,11 @@ MonoBehaviour:
   rbs:
   - {fileID: -2676351928004399709}
   textDisplay: {fileID: 7382417609159577124}
-  speech: {fileID: 5384147638766317388}
   agent: {fileID: 182569114121153252}
-  robbing: 0
+  robbing: 1
   askingItem: Milk
-  entranceSpeech: I need some MILK!!!
+  entranceSpeech: []
+  thankYouSpeech: 
 --- !u!195 &182569114121153252
 NavMeshAgent:
   m_ObjectHideFlags: 0
