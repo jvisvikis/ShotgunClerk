@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3325467351399604205}
   - component: {fileID: -6895019583768161998}
   - component: {fileID: 3109102700968788651}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sandwich
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3879336528965855012}
   - component: {fileID: 8396209639256172894}
   - component: {fileID: 802065853049100579}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_sandwich_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

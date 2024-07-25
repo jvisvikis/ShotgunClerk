@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2774989911856552062}
   - component: {fileID: -8302230430255367700}
   - component: {fileID: -2228043824117272188}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2485048580083320285}
   - component: {fileID: 6798151972927068875}
   - component: {fileID: 4944926739312203656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_can_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

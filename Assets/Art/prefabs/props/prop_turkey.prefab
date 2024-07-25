@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1028063973440212816}
   - component: {fileID: 6712784914849282929}
   - component: {fileID: 3904370689352338370}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_turkey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 9039809594491647839}
   - component: {fileID: 4324675808506380478}
   - component: {fileID: 8464669627443355794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_turkey_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

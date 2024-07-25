@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5256935099089732294}
   - component: {fileID: 9105289186304986998}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ToiletPaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 8061798337797954296}
   - component: {fileID: 6898452024665813281}
   - component: {fileID: 3142097329641274655}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: toilet_paper_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

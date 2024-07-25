@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 246688992946012702}
   - component: {fileID: 8799393800759368039}
   - component: {fileID: 420991259181584583}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_pear_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3824843719288364792}
   - component: {fileID: -1510057622878924625}
   - component: {fileID: -6570042524585710052}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_pear
   m_TagString: Untagged
   m_Icon: {fileID: 0}

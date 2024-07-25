@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1166697939933688531}
   - component: {fileID: 1117310490276421379}
   - component: {fileID: 7347285031854439866}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 212788052147202300}
   - component: {fileID: 7987414721427021858}
   - component: {fileID: 2720219892484557912}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cup_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

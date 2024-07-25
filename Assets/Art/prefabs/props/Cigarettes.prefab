@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3959949846623313903}
   - component: {fileID: 84221160433029204}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cigarette_box_lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 5458046365010221567}
   - component: {fileID: 6709613025024651592}
   - component: {fileID: 5408197565732985783}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cigarette_box_lid_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 6169410269271883876}
   - component: {fileID: 5998114729590734587}
   - component: {fileID: 1683841433049078899}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cigarette_box_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 2210720627837561004}
   - component: {fileID: -8657920490409052074}
   - component: {fileID: 9139457338541124848}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cigarettes
   m_TagString: Untagged
   m_Icon: {fileID: 0}

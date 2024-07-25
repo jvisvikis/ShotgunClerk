@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxOffset: 0.05
+  canHitMask:
+    serializedVersion: 2
+    m_Bits: 767
   bulletSpawn: {fileID: 1458322732474091737}
   trail: {fileID: 7322077780853487261, guid: b1652e954d552304e8499535d5e15922, type: 3}
   recoil: {fileID: 975498441510400507}

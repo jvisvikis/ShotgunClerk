@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ShotgunFire : MonoBehaviour
 {
     [SerializeField] private float maxOffset;
+    [SerializeField] private LayerMask canHitMask;
     [SerializeField] private Transform bulletSpawn;
     [SerializeField] private TrailRenderer trail;
     [SerializeField] private Recoil recoil;
@@ -40,9 +41,8 @@ public class ShotgunFire : MonoBehaviour
                 );
 
                 RaycastHit hit;
-                if (Physics.Raycast(cam.transform.position, bulletDir[i], out hit, 5f))
+                if (Physics.Raycast(cam.transform.position, bulletDir[i], out hit, 5f, canHitMask))
                 {
-                    Debug.Log("Did Hit: " + hit.collider.gameObject.name);
                     if(hit.collider.gameObject.tag == "Customer")
                     {
                         hit.collider.gameObject.GetComponent<CustomerBehaviour>().Die();

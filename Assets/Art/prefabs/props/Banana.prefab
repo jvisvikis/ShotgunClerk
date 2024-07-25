@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1901196628589714896}
   - component: {fileID: -4021605467665582060}
   - component: {fileID: -3110082535124100297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8897524264005924239}
   - component: {fileID: 4348952362745449986}
   - component: {fileID: 9152234516086851375}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_banana_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

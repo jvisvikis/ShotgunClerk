@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
         if(InputManager.instance.PlayerFired() && day > 3)
         {
             //GameOver
+            day = 1;
+            sceneManager.ReloadScene();
         }
     }
 
@@ -83,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void StartDay()
     {
-        Debug.Log("Day Started");
+        
         AudioManager.instance.PlayBackgroundMusic();
         string dayToLoad = $"Day{day}";
         uiManager.StartDay();
@@ -92,6 +94,7 @@ public class GameManager : MonoBehaviour
         customerManager.ResetDeadCustomers();
         customerManager.NextCustomer();
         if(day >= 2)
+            Debug.Log(FindObjectOfType<Radio>().GetComponent<Radio>());
             FindObjectOfType<Radio>().GetComponent<Radio>().TurnOnRadio();
     }
 
@@ -112,7 +115,7 @@ public class GameManager : MonoBehaviour
 
     public void KilledCustomer(bool robber)
     {
-        killCost += robber ? 500 : -500;
+        killCost += robber ? 200 : -300;
     }
     public void EndDay()
     {
@@ -120,6 +123,14 @@ public class GameManager : MonoBehaviour
         money += killCost;
         dayOver = true;
         uiManager.EndDay(day);
+        if(money < 0)
+        {
+          day = 0;  
+        }
+        money = 0;
+        killCost = 0;
+        robCost = 0;
+        gross = 0;
         day++;
     }
 

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5365411053835363877}
   - component: {fileID: 7467900621094958062}
   - component: {fileID: -7593367445075142985}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_pumpkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6043361283887873985}
   - component: {fileID: 2054237292082843270}
   - component: {fileID: 5738422192468546710}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_pumpkin_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

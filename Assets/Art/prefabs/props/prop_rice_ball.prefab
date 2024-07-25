@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2278119695184761321}
   - component: {fileID: 8913511512378031150}
   - component: {fileID: -6764285534375981891}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_rice_ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4795303718474471090}
   - component: {fileID: 2230379651322460649}
   - component: {fileID: 8053379098518904979}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_rice_ball_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

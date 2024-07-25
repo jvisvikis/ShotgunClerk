@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private GameManager gameManager;
     private Vector3 playerVelocity; 
     private InputManager inputManager;
+    private ChangeMaterial placementMat;
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         cam = Camera.main;
         counterSpawn = GameObject.Find("ItemSpawn").transform;
         controller = GetComponent<CharacterController>();
+        placementMat = FindObjectOfType<ChangeMaterial>().GetComponent<ChangeMaterial>();
         inputManager = InputManager.instance;
         customerManager = CustomerManager.instance;
         gameManager = GameManager.instance;
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
         //     BobItem();
         // }
         playerVelocity.y += gravityValue * Time.deltaTime;
-        if(gameManager.dayOver)
+        if(!gameManager.dayOver)
             controller.Move(playerVelocity * Time.deltaTime);
         
     }
@@ -102,15 +104,27 @@ public class PlayerController : MonoBehaviour
             {
                 for(int i = 0; i<itemNames.Length; i++)
                 {
-                    Debug.Log(itemNames[i] + " is " +hit.collider.gameObject.name);
-                    Debug.Log(itemNames[i].Contains(hit.collider.gameObject.name));
-                    if(itemNames[i].Contains(hit.collider.gameObject.name))
+
+                    
+                    if(hit.collider.gameObject.name.Contains(itemNames[i]) && hit.collider.gameObject.name.Contains("Clone"))
+                    {
+                        Debug.Log("Pickup item");
+                        hasItem = true;
+                        itemEquipped = hit.collider.gameObject;
+                        itemEquipped.transform.parent = itemSpawn;
+                        itemEquipped.transform.localPosition = Vector3.zero;
+                        itemEquipped.transform.localRotation = Quaternion.identity;
+                        itemEquipped.GetComponent<Rigidbody>().isKinematic = true;
+                        placementMat.ChangeColor(true);
+                    }
+                    else if(itemNames[i].Contains(hit.collider.gameObject.name))
                     {
                         hasItem = true;
                         itemEquipped = Instantiate(itemPrefabs[i], itemSpawn.position, itemSpawn.localRotation);
                         itemEquipped.transform.parent = itemSpawn;
                         itemEquipped.transform.localPosition = Vector3.zero;
                         itemEquipped.transform.localRotation = Quaternion.identity;
+                        placementMat.ChangeColor(true);
                     }
                 }
             }
@@ -120,6 +134,7 @@ public class PlayerController : MonoBehaviour
     private void PlaceItem()
     {
         // itemEquipped.GetComponent<Collider>().enabled = false;
+        placementMat.ChangeColor(false);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 2, counterLayer))
         {
@@ -147,6 +162,7 @@ public class PlayerController : MonoBehaviour
 
     private void DropItem()
     {
+        placementMat.ChangeColor(false);
         hasItem = false;
         shotgunEquipped = false;
         Rigidbody rb = itemEquipped.GetComponent<Rigidbody>();

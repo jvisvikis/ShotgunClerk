@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3202611651556495745}
   - component: {fileID: 652735848992790448}
   - component: {fileID: 5376132343479423551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_capsicum_yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3594788779954282429}
   - component: {fileID: 3113437296218246858}
   - component: {fileID: 885233214061698344}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_capsicum_yellow_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

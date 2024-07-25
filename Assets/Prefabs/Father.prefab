@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8734920211588443593}
   - component: {fileID: 4441471325747763068}
   - component: {fileID: -4447686746706258388}
-  - component: {fileID: 8494168413402054641}
+  - component: {fileID: -6143037556971715112}
   m_Layer: 9
   m_Name: Father
   m_TagString: Untagged
@@ -122,6 +122,7 @@ Transform:
   - {fileID: 1777589285928734782}
   - {fileID: 6819470249741024183}
   - {fileID: 4790469767474970111}
+  - {fileID: 974265019502297935}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8285968269879049584
@@ -208,6 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4908dbf2e5965346ac20a1c1b3f25e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: -6143037556971715112}
   speechBubble: {fileID: 6690060397743542765}
   shotgun: {fileID: 2837023717743110346}
   agent: {fileID: 2319131121850870783}
@@ -303,7 +305,7 @@ CapsuleCollider:
   m_Height: 1.1431398
   m_Direction: 1
   m_Center: {x: -0.0010509789, y: 0.5627899, z: 0.098671086}
---- !u!95 &8494168413402054641
+--- !u!95 &-6143037556971715112
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -439,7 +441,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6836861874629362167}
-  - {fileID: 974265019502297935}
   m_Father: {fileID: 265890208470883130}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8043932246118795048
@@ -498,7 +499,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6819470249741024183}
+    m_TransformParent: {fileID: 265890208470883130}
     m_Modifications:
     - target: {fileID: 1596428243510711384, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
@@ -508,22 +509,22 @@ PrefabInstance:
     - target: {fileID: 1596428243510711384, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.42658567
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.023009192
+      value: 1.0789949
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.63764596
+      value: 0.6678465
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
@@ -533,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00000012291855
+      value: -7.105428e-15
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
@@ -543,7 +544,7 @@ PrefabInstance:
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000115428165
+      value: -0.000000118324245
       objectReference: {fileID: 0}
     - target: {fileID: 4394895116099321821, guid: 41eef66be59a2ac4dad403e83ffae027,
         type: 3}
@@ -591,10 +592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3801623592976386005, guid: 2d7aa4a7e1baf2144bc52862f3efe333,
+    - target: {fileID: 4508419437423785609, guid: 2d7aa4a7e1baf2144bc52862f3efe333,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7666536934635173218, guid: 2d7aa4a7e1baf2144bc52862f3efe333,
         type: 3}

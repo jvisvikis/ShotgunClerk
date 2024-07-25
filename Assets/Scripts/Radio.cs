@@ -22,6 +22,7 @@ public class Radio : MonoBehaviour
 
     public void TurnOnRadio()
     {
+        gameManager = GameManager.instance;
         if(gameManager.day == 2)
             StartCoroutine(StartNews(day2lines));
         if(gameManager.day == 3)

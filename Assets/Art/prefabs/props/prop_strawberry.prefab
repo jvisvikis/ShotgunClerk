@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1388468339106526811}
   - component: {fileID: 1171738761488032495}
   - component: {fileID: 4420599054639957621}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_strawberry_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7370732327125461961}
   - component: {fileID: 6360450157005879140}
   - component: {fileID: 4562521523858372542}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_strawberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8403538490916640994}
   - component: {fileID: 8902529865203262031}
   - component: {fileID: 2865345195571409876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_shotgun_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4394895116099321821}
   - component: {fileID: -7948063396933385560}
   - component: {fileID: -1352069772969358053}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

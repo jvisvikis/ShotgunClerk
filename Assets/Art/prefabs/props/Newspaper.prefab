@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1341114152865767797}
   - component: {fileID: 9195244192675702644}
   - component: {fileID: 770008680347164689}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_newspaper_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 985067432678385384}
   - component: {fileID: -8922567069465066939}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Newspaper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 45316380403464887}
   - component: {fileID: 2808018930664698156}
   - component: {fileID: 5553559871504671274}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cigarette_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7060820435738000780}
   - component: {fileID: 7466286577648612424}
   - component: {fileID: 2153124331644478977}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_cigarette_box_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Father : MonoBehaviour
 {
+    [SerializeField] private Animator animator;
     [SerializeField] private GameObject speechBubble;
     [SerializeField] private GameObject shotgun;
     [SerializeField] private NavMeshAgent agent;
@@ -52,6 +53,7 @@ public class Father : MonoBehaviour
             {
                 speechBubble.SetActive(true);
                 startedTalking = true;
+                animator.SetBool("Talking", true);
                 StartCoroutine(StartTalking(dayOneLines, dayOneAudioClips, 0, 15));
             }
             if(agent.destination == transform.position && stoppedTalking && !dayStarted)
@@ -67,6 +69,7 @@ public class Father : MonoBehaviour
             {
                 speechBubble.SetActive(true);
                 startedTalking = true;
+                animator.SetBool("Talking", true);
                 StartCoroutine(StartTalking(dayTwoLines, dayTwoAudioClips, 0, dayTwoAudioClips.Length));
             }
             if((agent.destination == transform.position && stoppedTalking && !dayStarted) )
@@ -90,6 +93,7 @@ public class Father : MonoBehaviour
 
     public IEnumerator StartTalking(string [] lines, AudioClip[] audioClips, int idx, int stopIdx)
     {
+
         audioManager.PlayAudio(audioClips[idx], transform);
         textDisplay.TypeLine(lines[idx]);
         yield return new WaitForSeconds(audioClips[idx].length);
@@ -114,6 +118,7 @@ public class Father : MonoBehaviour
             stoppedTalking = true;
             shotgun.SetActive(false);
             speechBubble.SetActive(false);
+            animator.SetBool("Talking", false);
         }      
     }
 

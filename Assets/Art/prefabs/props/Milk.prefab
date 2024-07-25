@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4052597366730384465}
   - component: {fileID: 269118598193408468}
   - component: {fileID: 4220568733399614601}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_milk_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2267612275914635562}
   - component: {fileID: 6725358589401701087}
   - component: {fileID: 2752367723818548170}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Milk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

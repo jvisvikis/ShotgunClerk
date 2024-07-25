@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6066305500051886032}
   - component: {fileID: 6354150668661389191}
   - component: {fileID: 2639096746715760142}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_drink_B_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5521840659853521967}
   - component: {fileID: 7054521392393630527}
   - component: {fileID: -2193134461687104021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: OrangeDrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}

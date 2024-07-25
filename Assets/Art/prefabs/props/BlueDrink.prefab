@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2957002341820820694}
   - component: {fileID: 2479487399541496631}
   - component: {fileID: 5250785153929248854}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: prop_drink_A_geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1213098027578180251}
   - component: {fileID: -1559064424117650517}
   - component: {fileID: 3081482617079882940}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlueDrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
