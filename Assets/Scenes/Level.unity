@@ -4699,11 +4699,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010654965017440356, guid: c3ed805cfa7c899459ffe661bf537d5b,
         type: 3}
-      propertyPath: m_Height
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4010654965017440356, guid: c3ed805cfa7c899459ffe661bf537d5b,
-        type: 3}
       propertyPath: m_SlopeLimit
       value: 45
       objectReference: {fileID: 0}

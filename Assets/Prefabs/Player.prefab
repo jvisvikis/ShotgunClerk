@@ -595,7 +595,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   shotgunPosOffset: {x: 0.5, y: 0, z: -0.2}
-  shotgunPickup: {fileID: 8300000, guid: 825752fd6a0bf434785cdf6fdb2a1f98, type: 3}
+  shotgunPickup: {fileID: 8300000, guid: 67fed6c3b3c082d41afafbf3aaec2fe8, type: 3}
 --- !u!1 &6220921671040247612
 GameObject:
   m_ObjectHideFlags: 0

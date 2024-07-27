@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
         customerManager.ResetDeadCustomers();
         customerManager.NextCustomer();
         if(day >= 2)
-            Debug.Log(FindObjectOfType<Radio>().GetComponent<Radio>());
             FindObjectOfType<Radio>().GetComponent<Radio>().TurnOnRadio();
     }
 
